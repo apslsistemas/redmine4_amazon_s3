@@ -14,6 +14,10 @@ module AmazonS3
           :region => @@config.region
         }
 
+        if !@@config.endpoint.empty? && !@@config.endpoint.nil?
+          options[:endpoint] = @@config.endpoint
+        end
+
         @client = Aws::S3::Client.new(options)
       end
 

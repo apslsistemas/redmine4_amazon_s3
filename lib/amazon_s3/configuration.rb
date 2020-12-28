@@ -24,6 +24,7 @@ module AmazonS3
         :attachments_folder => nil,
         :thumbnails_folder  => nil,
         :private            => false,
+        :endpoint           => nil
       }
     end
 
@@ -49,6 +50,10 @@ module AmazonS3
         end
         @config[key.to_sym] = value
       end
+    end
+
+    def endpoint
+      @config[:endpoint]
     end
 
     def access_key_id
